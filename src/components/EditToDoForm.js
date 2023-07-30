@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-export default class EditToDoForm extends Component {
-    render () {
-        return (
-            <div></div>
-        )
-    }
+export function EditToDoForm() {
+    return (
+        <div></div>
+    )
 }

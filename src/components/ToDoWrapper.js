@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class ToDoWrapper extends Component {
-    render () {
-        return (
-            <div>ToDoWrapper</div>
-        )
-    }
+export const ToDoWrapper = () => {
+    return (
+        <div></div>
+    )
 }

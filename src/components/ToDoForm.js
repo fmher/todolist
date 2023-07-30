@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React, { useState} from "react";
 
-export default class ToDoForm extends Component {
-    render () {
-        return (
-            <div></div>
-        )
-    }
+export const ToDoForm = () => {
+    return (
+        <div></div>
+    )
 }

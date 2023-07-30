@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-export default class ToDo extends Component {
-    render () {
-        return (
-            <div></div>
-        )
-    }
+export const ToDo = () => {
+    return (
+        <div></div>
+    )
 }
