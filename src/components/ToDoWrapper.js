@@ -28,7 +28,7 @@ export const ToDoWrapper = () => {
     }
 
     const editTask = (task, id) => {
-        setTodos(todos.map())
+        setTodos(todos.map(todo => todo.id === id ? {...todo, task, isEditing: !todo.isEditing} : todo))
     }
 
     return (
