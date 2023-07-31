@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { ToDoForm } from "./ToDoForm";
 import { v4 as uuidv4 } from "uuid";
 import { ToDo } from "./ToDo";
+import { EditToDoForm } from "./EditToDoForm";
+
 uuidv4()
 
 export const ToDoWrapper = () => {
@@ -21,6 +23,14 @@ export const ToDoWrapper = () => {
         setTodos(todos.filter(todo => todo.id !== id))
     }
 
+    const editTodo = id => {
+        setTodos(todos.map(todo => todo.id === id ? {...todo, isEditing: !todo.isEditing} : todo))
+    }
+
+    const editTask = (task, id) => {
+        setTodos(todos.map())
+    }
+
     return (
         <div className="todowrapper">
             <h1>To Do List!</h1>
@@ -31,12 +41,20 @@ export const ToDoWrapper = () => {
             {/* () for implicit return, return directly from arrow function */}
             {/* {} for explicit return, return multiple elements, add more functions */}
             {todos.map((todo, i) => (
-                <ToDo 
-                    task={todo} 
-                    key={i} 
-                    toggleComplete={toggleComplete}
-                    deleteTodo={deleteTodo}
-                />
+                todo.isEditing ? (
+                    <EditToDoForm 
+                        editTodo={editTask}
+                        task={todo}
+                    />
+                ) : (
+                    <ToDo 
+                        task={todo} 
+                        key={i} 
+                        toggleComplete={toggleComplete}
+                        deleteTodo={deleteTodo}
+                        editTodo={editTodo}
+                    />
+                )
             ))}
             
         </div>
