@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const EditToDoForm = ({editTodo, task}) => {
+export const EditToDoForm = ({editTask, task}) => {
 
     const [value, setValue] = useState(task.task)
 
@@ -8,9 +8,9 @@ export const EditToDoForm = ({editTodo, task}) => {
         // this prevents page from refreshing
         e.preventDefault();
 
-        editTodo(value, task.id)
+        editTask(value, task.id)
 
-        setValue("")
+        // setValue("")
     }
 
     return (

@@ -43,7 +43,7 @@ export const ToDoWrapper = () => {
             {todos.map((todo, i) => (
                 todo.isEditing ? (
                     <EditToDoForm 
-                        editTodo={editTask}
+                        editTask={editTask}
                         task={todo}
                     />
                 ) : (

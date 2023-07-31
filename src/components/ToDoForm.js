@@ -9,7 +9,7 @@ export const ToDoForm = ({addToDo}) => {
         e.preventDefault();
 
         addToDo(value)
-
+        // console.log('this is value -', value)
         setValue("")
     }
 
