@@ -16,6 +16,7 @@ export const ToDoWrapper = () => {
 
     return (
         <div className="todowrapper">
+            <h1>To Do List!</h1>
             {/* addToDo = a function on top called addToDo, allows you to pass
             info to other files */}
             <ToDoForm addToDo={addToDo} />
