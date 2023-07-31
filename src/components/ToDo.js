@@ -5,13 +5,13 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 // import { faUser } from "@fortawesome/free-regular-svg-icons";
 
-export const ToDo = ({task, toggleComplete}) => {
+export const ToDo = ({task, toggleComplete, deleteTodo}) => {
     return (
         <div className="Todo">
             <p onClick={() => toggleComplete(task.id)} className={`${task.completed ? 'completed' : ""}`}>{task.task}</p>
             <div>
                 <FontAwesomeIcon icon={faPenToSquare} />
-                <FontAwesomeIcon icon={faTrash} />
+                <FontAwesomeIcon icon={faTrash} onClick={() => deleteTodo(task.id)} />
                 {/* <FontAwesomeIcon icon={faCoffee} />
                 <FontAwesomeIcon icon={faUser} /> */}
             </div>
