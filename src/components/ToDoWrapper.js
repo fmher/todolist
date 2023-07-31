@@ -13,6 +13,13 @@ export const ToDoWrapper = () => {
         console.log(todos)
     }
 
+    const toggleComplete = (id) => {
+        setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo))
+    }
+
+    const deleteTodo = (id) => {
+        setTodos(todos.filter(todo => todo.id !== id))
+    }
 
     return (
         <div className="todowrapper">
@@ -27,6 +34,8 @@ export const ToDoWrapper = () => {
                 <ToDo 
                     task={todo} 
                     key={i} 
+                    toggleComplete={toggleComplete}
+                    deleteTodo={deleteTodo}
                 />
             ))}
             
